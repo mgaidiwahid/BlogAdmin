@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+{% block title %}Contact{% endblock%}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset('contact-app/style/stylesheet.css') }}" media="all" />
+{% endblock %}
+
+
+{% block body %}
+<div id="container">
+   <!-- Begin Page Intro -->
+  <h3 class="intro">Hi! This is an intro for the page. Aliquam dignissim facilisis est vel laoreet. Sed pulvinar neque nec turpis congue lobortis. Aliquam aliquam turpis est. Morbi eu feugiat leo. Vivamus commodo nisi sed dui scelerisque et molestie ante imperdiet. Nulla ultricies nulla eu massa rhoncus at mattis erat eleifend. Praesent id massa massa. Proin nec lectus diam aliquam.<span></span></h3><!-- End Page Intro -->
+  
+  
+  <div class="contact-form">
+    <h2>Would you like to send us a message?</h2>
+    <p>Nullam suscipit velit et felis rhoncus semper vitae sed purus. Ut porttitor, risus in commodo adipiscing, urna erat egestas quam, at rhoncus mi ante sit amet elit. Ut sodales tellus eu purus molestie eget varius sapien suscipit.</p>
+    
+    <!-- Begin Form -->
+    
+    <div id="acf-area">
+      <div id="acf-fields">
+        <form id="ajax-contact-form" name="ajax_contact_form" method="post" action="{{ path('od_main_contact') }}" {{ form_enctype(form) }} >
+			{% if app.session.flashbag.has('blogger-notice') %}
+			<div class="blogger-notice">
+			{{ app.session.flashbag.get('blogger-notice') }}
+			</div>
+			{% endif %}
+		  {{ form_errors(form) }}
+		  {{ form_row(form.name) }}
+		  
+          <!--<input class="required" size="20"  type="text" name="sender_name" id="sender_name" value="" />
+          <label>Name (required)</label>-->
+          <div class="clear"></div>
+          <!--<input class="required" size="20"  type="text" name="sender_email" id="sender_email" value="" />
+          <label>E-Mail (required, will not be published)</label>-->
+		  {{ form_row(form.email) }}
+          <div class="clear"></div>
+		  {{ form_row(form.website) }}
+          <!--<input class="" size="20"  type="text" name="sender_web" id="sender_web" value="" />
+          <label>Website (optional)</label>-->
+          <div class="clear"></div>
+		  {{ form_row(form.body) }}
+          <!--<textarea class="required" rows="5" cols="25"  name="sender_message" id="sender_message"></textarea>-->
+          <div class="clear"></div>
+          <button type="submit">Submit</button><div class="clear"></div>
+          <div id="ajax-loading">Submitting...</div>
+          <input type="hidden" name="success_sent" id="success_sent" value="0" />
+		  {{ form_row(form._token) }}
+        </form>
+        <div id="acf-note"></div>
+      </div>
+    </div>
+    <!-- End Form --> 
+    
+  </div>
+  
+  <!-- Begin Information -->
+  <div class="information">
+    <ul class="contact-info">
+      <li class="home">Lorem Avenue Ipsum Street No:11/21</li>
+      <li class="tel">+66 555 - 444 33 22</li>
+      <li class="mail">contact@companyname.com</li>
+    </ul>
+     <!-- Begin Map -->
+    <div class="map">
+      <img src="{{ asset('style/images/map.jpg') }}" alt="" />
+     </div>
+       <!-- End Map -->
+  </div>
+  <!-- End Information -->
+</div><!-- End Container -->
+<div class="clearfix"></div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+/*
+Theme Name: MafiaShare.net -  Fadelicious
+Theme URI: http://www.mafiashare.net http://fadelicious.iki-bir.com
+Description: Awesome Wordpress blog & portfolio theme.
+Version: 1.3
+Author: (Shared on MafiaShare.net) elemis
+Author URI: http://www.mafiashare.net  http://themeforest.net/user/elemis
+Tags: wordpress, portfolio, fade, blog
+*/
+
+@import "style/css/reset.css";
+@import "style/css/layout.css";
+@import "style/css/skin.css";
+@import "style/css/gray.css";

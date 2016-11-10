@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Typography{% endblock%}
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ asset('style/js/tabs.js') }}"></script>
+
+{% endblock %}
+{% block body %}
+<div id="container">
+ <h3 class="intro">Hi! This is an intro for the page. Aliquam dignissim facilisis est vel laoreet. Sed pulvinar neque nec turpis congue lobortis. Aliquam aliquam turpis est. Morbi eu feugiat leo. Vivamus commodo nisi sed dui scelerisque et molestie ante imperdiet. Nulla ultricies nulla eu massa rhoncus at mattis erat eleifend. Praesent id massa massa. Proin nec lectus diam aliquam.<span></span></h3>
+  <div id="content">
+  <div class="headings">
+    <h1>H1 Heading</h1>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    <h2>H2 Heading</h2>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    <h3>H3 Heading</h3>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    <h4>H4 Heading</h4>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    <h5>H5 Heading</h5>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    <h6>H6 Heading</h6>
+    <p>Vivamus euismod viverra bibendum. Vestibulum pharetra venenatis metus id dignissim. Maecenas scelerisque ornare nunc vel imperdiet. Sed vitae magna nec risus luctus auctor pretium at mi.</p>
+    </div>
+     <div class="divider2"></div>
+    <h2>Text</h2>
+    <p><em>This is emphasised text</em><br />
+      <strong>This is strong text</strong><br />
+      <abbr title="This is an abbr - &lt;abbr&gt;&lt;/abbr&gt;">This is an abbr</abbr><br />
+      <del>This is deleted text</del><br />
+      <a href="#">This is a link</a></p>
+      
+      <div class="divider2"></div>
+    <h2>Code Display</h2>
+    <pre><code>This is a block of code
+This is a block of code
+This is a block of code</code></pre>
+
+
+    <div class="divider2"></div>
+    <h2>Misc Typography</h2>
+    <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. <abbr title="Avenue">AVE</abbr></p>
+  </div>
+  <div id="sidebar">
+    <div class="searchbox">
+      <form method="get" id="searchform" action="">
+        <input type="text" value="" name="s" id="s" class="searchbar" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="clear"></div>
+    <div id="tab">
+      <ul class="nav">
+        <li><a href="#recent" class="current">Recent<span></span></a></li>
+        <li><a href="#popular">Popular<span></span></a></li>
+        <li><a href="#comment">Comment<span></span></a></li>
+      </ul>
+      <div class="list-wrap">
+        <ul id="recent">
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Donec viverra</a></li>
+        </ul>
+        <ul id="popular" class="hide">
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+        </ul>
+        <ul id="comment" class="hide">
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2>Archives</h2>
+    <ul class="list">
+      <li><a href="#">January 2010</a></li>
+      <li><a href="#">February 2010</a></li>
+      <li><a href="#">March 2010</a></li>
+      <li><a href="#">April 2010</a></li>
+      <li><a href="#">May 2010</a></li>
+      <li><a href="#">June 2010</a></li>
+    </ul>
+    <div class="clear"></div>
+    <h2>Flickr</h2>
+    <div class="flickr"> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> <a href="#"><img src="img/803.jpg" alt=""/></a> <a href="#"><img src="img/804.jpg" alt="" /></a> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> </div>
+    <div class="clear"></div>
+    <h2>Advertisement</h2>
+    <div class="ads"> <a href="#"><img src="img/tf.gif" alt="" /></a> <a href="#"><img src="img/gr.gif" alt="" /></a> <a href="#"><img src="img/cc.gif" alt="" /></a> <a href="#"><img src="img/ad.gif" alt="" /></a> </div>
+  </div>
+</div>
+<div class="clear"></div>
+
+{% endblock %}
+

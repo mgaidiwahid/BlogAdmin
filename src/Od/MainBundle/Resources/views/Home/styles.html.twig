@@ -1,0 +1,688 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Styles{% endblock%}
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ asset('style/js/tabs.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/ticker.js') }}"></script>
+
+<script type='text/javascript'>
+        $(function() {
+    
+            $("#tab").organicTabs();
+    
+        });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+//Hide the tooglebox when page load
+$(".togglebox").hide();
+//slide up and down when click over heading 2
+$("h2").click(function(){
+// slide toggle effect set to slow you can set it to fast too.
+$(this).toggleClass("active").next(".togglebox").slideToggle("slow");
+return true;
+});
+});
+
+</script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//Default Action
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+	
+	//On Click Event
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active content
+		return false;
+	});
+
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	$(".ticker").jCarouselLite({
+		vertical: true,
+		hoverPause:true,
+		visible: 1,
+		auto:2500,
+		speed:1400
+	});
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	$(".ticker2").jCarouselLite({
+		vertical: true,
+		hoverPause:true,
+		visible: 1,
+		auto:2500,
+		speed:1400
+	});
+});
+</script>
+
+{% endblock %}
+{% block body %}
+<div id="container">
+  <h3 class="intro">Hi! This is an intro for the page. Aliquam dignissim facilisis est vel laoreet. Sed pulvinar neque nec turpis congue lobortis. Aliquam aliquam turpis est. Morbi eu feugiat leo. Vivamus commodo nisi sed dui scelerisque et molestie ante imperdiet. Nulla ultricies nulla eu massa rhoncus at mattis erat eleifend. Praesent id massa massa. Proin nec lectus diam aliquam.<span></span></h3>
+  <div id="content">
+    <h1>Buttons</h1>
+    <a class="button2">This is the small button which can be any size<span></span></a>
+    <div class="clearfix"></div>
+  
+    <pre>&lt;a class=&quot;button2&quot; href=&quot;#&quot;&gt;Text&lt;span&gt;&lt;/span&gt;&lt;/a&gt;</pre>
+  
+    <a class="button">This is the big button which can be any size<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;Text&lt;span&gt;&lt;/span&gt;&lt;/a&gt;</pre>
+    
+    <h3>Colored Buttons</h3>
+<div class="one-half">
+<a class="button blue">Big blue button<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button2 blue&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+
+
+<div class="one-half last">
+  <a class="button2 blue">Small blue button<span></span></a>
+    <div class="clearfix"></div>
+  
+    <pre>&lt;a class=&quot;button2 blue&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="one-half">
+<a class="button green">Big green button<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button2 green&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+
+
+<div class="one-half last">
+ <a class="button2 green">Small green button<span></span></a>
+    <div class="clearfix"></div>
+  
+   <pre>&lt;a class=&quot;button2 green&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+<div class="clearfix"></div>
+
+
+
+<div class="one-half">
+<a class="button pink">Big pink button<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button2 pink&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+
+
+<div class="one-half last">
+<a class="button2 pink">Small pink button<span></span></a>
+    <div class="clearfix"></div>
+  
+   <pre>&lt;a class=&quot;button2 pink&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+<div class="clearfix"></div>
+
+
+
+<div class="one-half">
+<a class="button brown">Big brown button<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button2 brown&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+
+
+<div class="one-half last">
+<a class="button2 brown">Small brown button<span></span></a>
+    <div class="clearfix"></div>
+  
+   <pre>&lt;a class=&quot;button2 brown&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+<div class="clearfix"></div>
+
+<div class="one-half">
+<a class="button yellow">Big yellow button<span></span></a>
+    <div class="clearfix"></div>
+   
+    <pre>&lt;a class=&quot;button2 yellow&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+
+
+<div class="one-half last">
+<a class="button2 yellow">Small yellow button<span></span></a>
+    <div class="clearfix"></div>
+  
+   <pre>&lt;a class=&quot;button2 yellow&quot; href=&quot;#&quot;&gt;
+    Text&lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+</div>
+<div class="clearfix"></div>
+ 
+    <div class="divider3"></div>
+    <h1>Special List Styles</h1>
+    <h3>Check List</h3>
+    <ul class="check">
+      <li>This is check mark list item #1</li>
+      <li>This is check mark list item #1</li>
+      <li>This is check mark list item #3</li>
+    </ul>
+ 
+    <pre>&lt;ul class=&quot;check&quot;&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+ 
+    <h3>Bullet List</h3>
+    <ul class="bullet">
+      <li>This is bullet list item #1</li>
+      <li>This is bullet list item #1</li>
+      <li>This is bullet list item #3</li>
+    </ul>
+
+    <pre>&lt;ul class=&quot;bullet&quot;&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+  
+     <h3>Two Column Check List</h3>
+<ul class="check2">
+        <li>Two Column Check List Item #1</li>
+        <li>Two Column Check List Item #2</li>
+        <li>Two Column Check List Item #3</li>
+        <li>Two Column Check List Item #4</li>
+      </ul>
+      
+     
+      
+      <div class="clear"></div>
+      
+   
+    <pre>&lt;ul class=&quot;check2&quot;&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #3&lt;/li&gt;
+	&lt;li&gt;Item #4&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      
+       <h3>Two Column Bullet List</h3>
+<ul class="bullet2">
+        <li>Two Column Bullet List Item #1</li>
+        <li>Two Column Bullet List Item #2</li>
+        <li>Two Column Bullet List Item #3</li>
+        <li>Two Column Bullet List Item #4</li>
+      </ul>
+      
+      
+        <div class="clear"></div>
+        
+        
+    <pre>&lt;ul class=&quot;bullet2&quot;&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #1&lt;/li&gt;
+	&lt;li&gt;Item #3&lt;/li&gt;
+	&lt;li&gt;Item #4&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      
+       <div class="clear"></div>
+    <div class="divider3"></div>
+    <h1>Box Styles</h1>
+    <div class="one-half" style="float:left;">
+      <div class="info-box">This is an information box</div>
+      <pre>&lt;div class="info-box"&gt;
+      This is an information box
+&lt;/div&gt;</pre>
+    </div>
+    <div class="one-half last">
+      <div class="download-box">This is a download box</div>
+      <pre>&lt;div class="download-box"&gt;
+      This is a download box
+&lt;/div&gt;</pre>
+    </div>
+    <div class="one-half">
+      <div class="warning-box">This is a warning box</div>
+      <pre>&lt;div class="warning-box"&gt;
+      This is a warning box
+&lt;/div&gt;</pre>
+    </div>
+    <div class="one-half last">
+      <div class="note-box">This is a note box</div>
+      <pre>&lt;div class="note-box"&gt;
+      This is a note box
+&lt;/div&gt;</pre>
+    </div>
+    <div class="clear"></div>
+    <div class="divider3"></div>
+    <h1>Dropcaps</h1>
+    <p> <span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non sem nec ante pharetra luctus vel et quam. Phasellus ut ipsum eros. Ut vestibulum, lorem at hendrerit viverra, velit sapien dignissim nibh, vitae facilisis sapien erat sed neque. Aenean nec urna sed odio fermentum eleifend eget sed odio. Aliquam blandit mi sed purus interdum suscipit. Suspendisse et metus at ipsum imperdiet rhoncus vel sit amet tortor. </p>
+    <pre>&lt;span class="dropcap"&gt;L&lt;/span&gt;</pre>
+    <div class="divider3"></div>
+    <h1>Quotes</h1>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. <span class="quote-right">This is a quote. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</span> Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Vestibulum ullamcorper quam nec lorem aliquam id feugiat risus tincidunt. Donec sit amet eros id mi semper tincidunt in eu nunc. Nam sit amet sem. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Praesent mattis, massa. Phasellus vel euismod augue. Nunc lobortis lacinia enim at ultricies. Ut at lacinia justo. Suspendisse at nisl eget nulla imperdiet auctor vitae at mi.</p>
+    <p>Nam sit amet sem. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Eu volutpat enim diam eget metus. <span class="quote-left">This is class quote-left. Suspendisse dictum magna id purus tincidunt rutrum. Aliquam libero nisi.</span> Nulla non tortor eget ligula dapibus semper non ut mauris. Nam feugiat, lorem a tempus auctor, odio nisl porttitor lacus, ut ultrices neque massa a odio. Pellentesque sit amet leo dictum nisl tempor malesuada id ut magna. Etiam non mauris eget massa sagittis euismod. Aliquam lectus nulla, consequat eget molestie id, malesuada sit amet lectus. Pellentesque eget justo sit amet nunc adipiscing semper at ac quam. Praesent a volutpat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. </p>
+    <pre>&lt;span class="quote-right"&gt;
+  This is quote-right. 
+&lt;/span&gt;</pre>
+    <pre>&lt;span class="quote-left"&gt;
+  This is quote-left.
+&lt;/span&gt;</pre>
+    <div class="divider3"></div>
+    <h1>Toggle</h1>
+    <div class="toggle">
+      <div class="toggle-wrapper">
+        <h2 class="trigger">Toggle Title</h2>
+        <div class="togglebox">
+          <p>Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+        </div>
+      </div>
+    </div>
+    <div class="toggle">
+      <div class="toggle-wrapper">
+        <h2 class="trigger">Toggle Title</h2>
+        <div class="togglebox">
+          <p>Maecenas faucibus congue arcu id luctus. Pellentesque viverra, arcu ac placerat accumsan, ipsum nunc sagittis erat, in varius nisl arcu eu elit. In pretium fermentum dui, ut consequat risus vulputate eu. Integer diam neque, molestie vitae aliquet eu, pulvinar sed erat. </p>
+        </div>
+      </div>
+    </div>
+    <div class="toggle">
+      <div class="toggle-wrapper">
+        <h2 class="trigger">Toggle Title</h2>
+        <div class="togglebox">
+          <p>Integer diam neque, molestie vitae aliquet eu, pulvinar sed erat. Duis tincidunt lacus id neque consequat sit amet ornare orci egestas. Integer tristique aliquam sollicitudin. Nunc nibh turpis, ullamcorper eu pulvinar non, congue semper tellus. Nunc at quam erat, ut ornare tellus. In neque tellus, fringilla quis semper non, viverra quis turpis.</p>
+        </div>
+      </div>
+    </div>
+    <pre>&lt;div class="toggle"&gt;
+	&lt;h2 class="trigger"&gt;Toggle Title&lt;/h2&gt;
+		&lt;div class="togglebox"&gt;
+			&lt;p&gt;Your text.&lt;/p&gt;
+		&lt;/div&gt;
+&lt;/div&gt;</pre>
+    <div class="divider3"></div>
+    <h1>Highlight</h1>
+    <p> Morbi sed lectus nibh. <span class="highlight1">This is highlighted text.</span> Integer velit urna, <span class="highlight2">this is another version of highlighted text</span> sit amet, convallis ut risus. In neque tellus, fringilla quis semper non, viverra quis turpis. </p>
+    <pre>&lt;span class="highlight1"&gt;This is highlight.&lt;/span&gt;
+&lt;span class="highlight2"&gt;This is alternative highlight.&lt;/span&gt;</pre>
+    <div class="divider3"></div>
+    <h1>Image Frames</h1>
+    <h3>Image aligned left</h3>
+    <img src="img/1953.jpg" alt="" class="thin left" />
+    <p>Morbi est elit, imperdiet sit amet pharetra eget, egestas in leo. Ut quis risus elit. Nunc semper aliquet nisl ut iaculis. Vivamus tristique odio et dui convallis dapibus ornare diam mattis. Proin non commodo elit. Nulla hendrerit dui id orci hendrerit quis mollis urna sollicitudin. Maecenas faucibus congue arcu id luctus. Pellentesque viverra, arcu ac placerat accumsan, ipsum nunc sagittis erat, in varius nisl arcu eu elit. In pretium fermentum dui, ut consequat risus vulputate eu. Integer diam neque, molestie vitae aliquet eu, pulvinar sed erat. Duis tincidunt lacus id neque consequat sit amet ornare orci egestas. Integer tristique aliquam sollicitudin. Nunc nibh turpis, ullamcorper eu pulvinar non, congue semper tellus. Nunc at quam erat, ut ornare tellus. </p>
+    <div class="clearfix"></div>
+    <h3>Image aligned right</h3>
+    <img src="img/1954.jpg" alt="" class="thin right" />
+    <p>Morbi est elit, imperdiet sit amet pharetra eget, egestas in leo. Ut quis risus elit. Nunc semper aliquet nisl ut iaculis. Vivamus tristique odio et dui convallis dapibus ornare diam mattis. Proin non commodo elit. Nulla hendrerit dui id orci hendrerit quis mollis urna sollicitudin. Maecenas faucibus congue arcu id luctus. Pellentesque viverra, arcu ac placerat accumsan, ipsum nunc sagittis erat, in varius nisl arcu eu elit. In pretium fermentum dui, ut consequat risus vulputate eu. Integer diam neque, molestie vitae aliquet eu, pulvinar sed erat. Duis tincidunt lacus id neque consequat sit amet ornare orci egestas. Integer tristique aliquam sollicitudin. Nunc nibh turpis, ullamcorper eu pulvinar non, congue semper tellus. Nunc at quam erat, ut ornare tellus. In neque tellus, fringilla quis semper non. </p>
+    <pre>&lt;img src="#" class="thin left" /&gt;
+&lt;img src="#" class="thin right /&gt;</pre>
+    <div class="divider3"></div>
+    <h1>Tabs</h1>
+    <div class="tabbed-content">
+      <ul class="tabs">
+        <li><a href="#tab1">This is</a></li>
+        <li><a href="#tab2">Tabbed</a></li>
+        <li><a href="#tab3">Content</a></li>
+      </ul>
+      <div class="tab_container">
+        <div style="display: none;" id="tab1" class="tab_content">
+          <h3>Hello</h3>
+          <p><img src="img/804.jpg" alt="" class="thin right" />Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc rhoncus tortor quis eros bibendum a tempus est dapibus. Vivamus consectetur quam eu tellus porttitor ultrices. Nunc metus massa, ullamcorper sit amet malesuada a, porttitor in tellus. Vestibulum ullamcorper quam nec lorem aliquam id feugiat risus tincidunt. </p>
+        </div>
+        <div style="display: none;" id="tab2" class="tab_content">
+          <h3>We love tabs</h3>
+          <p><img src="img/802.jpg" alt="" class="thin left" />Etiam molestie, risus eu gravida lobortis, velit sapien aliquam lectus, nec hendrerit lectus erat ac libero. Aenean fermentum luctus viverra. Pellentesque id lectus ante, vel tristique elit. Fusce mattis, purus non consectetur cursus, justo nisi viverra sem, ac lobortis ipsum sapien vel purus. Vivamus aliquet gravida nibh sit amet accumsan. Fusce et lorem nunc. Sed convallis, tortor nec ornare sagittis, velit ligula varius sapien, eu cursus nisl purus sed felis. Morbi congue pellentesque quam, eu ultricies.</p>
+        </div>
+        <div style="display: none;" id="tab3" class="tab_content">
+          <h3>Don't you?</h3>
+          <p>Nulla non tortor eget ligula dapibus semper non ut mauris. Nam feugiat, lorem a tempus auctor, odio nisl porttitor lacus, ut ultrices neque massa a odio. Pellentesque sit amet leo dictum nisl tempor malesuada id ut magna. Etiam non mauris eget massa sagittis euismod. Aliquam lectus nulla, consequat eget molestie id, malesuada sit amet lectus. Pellentesque eget justo sit amet nunc adipiscing semper at ac quam. Praesent a volutpat nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <pre>&lt;div class="tabbed-content"&gt;
+	&lt;ul class="tabs"&gt;
+		&lt;li&gt;&lt;a href="#tab1"&gt;First Tab&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#tab2"&gt;Second Tab&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#tab3"&gt;Third Tab&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	
+	&lt;div class="tab_container"&gt;
+		&lt;div style="display: none;" id="tab1"&gt;
+			First tab content
+		&lt;/div&gt;
+		&lt;div style="display: none;" id="tab2"&gt;
+			Second tab content
+		&lt;/div&gt;
+		&lt;div style="display: none;" id="tab3"&gt;
+			Third tab content
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+    <div class="clearfix"></div>
+    <div class="divider3"></div>
+    <h1>Testimonials</h1>
+    <h3>Testimonial Example 1</h3>
+    <div id="ticker-wrapper">
+      <div class="ticker">
+        <ul>
+          <li>
+            <div class="message">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. This is a pullquote. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+              <strong>by Jacqueline</strong> </div>
+          </li>
+          <li>
+            <div class="message">
+              <p>Morbi est elit, imperdiet sit amet pharetra eget, egestas in leo. Ut quis risus elit. Nunc semper aliquet nisl ut iaculis. Vivamus tristique odio et dui convallis dapibus ornare diam mattis. Proin non commodo elit.</p>
+              <strong>by Charlene</strong> </div>
+          </li>
+          <li>
+            <div class="message">
+              <p>Praesent sollicitudin ligula at diam iaculis auctor. Suspendisse tellus mi, condimentum id rutrum auctor, lobortis tempus orci. Nunc sem nisl, varius imperdiet mollis nec, molestie a quam. </p>
+              <strong>by Mathieu</strong> </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <pre>
+&lt;div id="ticker-wrapper"&gt;
+	&lt;div class="ticker"&gt;
+		&lt;ul&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    <h3>Testimonial Example 2</h3>
+    <div id="ticker-wrapper2">
+      <div class="ticker2">
+        <ul>
+          <li>
+            <div class="message">
+              <p>Maecenas dapibus sagittis gravida. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam cursus consectetur dignissim. Cras porta ligula in urna dapibus ullamcorper. Nulla semper, neque sed lacinia blandit, risus ante consectetur tortor, vitae cursus lacus quam sit amet magna. Mauris nunc nisl, blandit quis sollicitudin lobortis, cursus et felis. </p>
+              <strong>by Jacqueline</strong> </div>
+          </li>
+          <li>
+            <div class="message">
+              <p>Nam nunc mi, lacinia sit amet tempor quis, bibendum eget arcu. Suspendisse sollicitudin nisi et leo adipiscing eu sodales arcu bibendum. Nulla eget ultrices enim. Aenean non turpis eget diam accumsan porttitor in non elit. Etiam dapibus massa libero, vel tincidunt nisi. </p>
+              <strong>by Charlene</strong> </div>
+          </li>
+          <li>
+            <div class="message">
+              <p>Praesent sollicitudin ligula at diam iaculis auctor. Suspendisse tellus mi, condimentum id rutrum auctor, lobortis tempus orci. Nunc sem nisl, varius imperdiet mollis nec, molestie a quam. Curae; Mauris mollis sodales eros, at semper augue ultricies eget. Fusce quis orci elit. Praesent congue, nulla vitae tincidunt gravida, justo leo congue erat.</p>
+              <strong>by Mathieu</strong> </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <pre>
+&lt;div id="ticker-wrapper2"&gt;
+	&lt;div class="ticker2"&gt;
+		&lt;ul&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+			&lt;li&gt; &lt;div class="message"&gt; Content &lt;/div&gt; &lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="clearfix"></div>
+<div class="divider3"></div>
+    <h1>Table</h1>
+    <table>
+      <tr>
+        <th>Table Header 1</th>
+        <th>Table Header 2</th>
+        <th class="center">Centered Header 3</th>
+      </tr>
+      <tr>
+        <td>Division 1</td>
+        <td>Division 2</td>
+        <td class="center">Division 3</td>
+      </tr>
+      <tr class="even">
+        <td>Division 1</td>
+        <td>Division 2</td>
+        <td class="center">Division 3</td>
+      </tr>
+      <tr>
+        <td>Division 1</td>
+        <td>Division 2</td>
+        <td class="center">Division 3</td>
+      </tr>
+    </table>
+    <div class="clearfix"></div>
+    <pre>&lt;table cellspacing="0" cellpadding="0"&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header 1&lt;/th&gt;
+&lt;th&gt;Table Header 2&lt;/th&gt;
+&lt;th&gt;Centered Header 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Division 1&lt;/td&gt;
+&lt;td&gt;Division 2&lt;/td&gt;
+&lt;td&gt;Division 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+
+    <div class="clearfix"></div>
+    <div class="divider3"></div>
+    <h1>Pricing Table</h1>
+    <div id="table">
+      <table class="price">
+        <tr class="border_bottom">
+          <td>&nbsp;</td>
+          <td><h2>Free <span>-</span></h2></td>
+          <td><h2>Mini <span>10$/<sup>month</sup></span></h2></td>
+          <td><h2>Medium <span>10$/<sup>month</sup></span></h2></td>
+          <td><h2>Advanced <span>10$/<sup>month</sup></span></h2></td>
+        </tr>
+        <tr class="even">
+          <td class="right">Lorem Ipsum</td>
+          <td>1</td>
+          <td>5</td>
+          <td>20</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td class="right">Lorem Ipsum</td>
+          <td>1</td>
+          <td>10</td>
+          <td>50</td>
+          <td>Unlmited</td>
+        </tr>
+        <tr class="even">
+          <td class="right">Lorem Ipsum</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+        </tr>
+        <tr>
+          <td class="right">Lorem Ipsum</td>
+          <td>&mdash;</td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+        </tr>
+        <tr class="even">
+          <td class="right">Lorem Ipsum</td>
+          <td>&mdash;</td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+        </tr>
+        <tr>
+          <td class="right">Lorem Ipsum</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td><img src="style/images/tick_16.png" width="16" height="16" alt="" /></td>
+        </tr>
+      </table>
+    </div>
+    <div class="clearfix"></div>
+    <pre>
+&lt;div id="table"&gt;
+&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+&lt;tr class="border_bottom"&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;h2&gt;Free
+&lt;span&gt;-&lt;/span&gt;&lt;/h2&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h2&gt;Mini
+&lt;span&gt;10$/&lt;sup&gt;month&lt;/sup&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h2&gt;Medium
+&lt;span&gt;10$/&lt;sup&gt;month&lt;/sup&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h2&gt;Advanced
+&lt;span&gt;10$/&lt;sup&gt;month&lt;/sup&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Unlimited&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;Unlimited&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="even"&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="right"&gt;Lorem Ipsum&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&amp;mdash;&lt;/td&gt;
+&lt;td&gt;&lt;img src="style/images/tick_16.png"/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+  <div id="sidebar">
+    <div class="searchbox">
+      <form method="get" id="searchform" action="">
+        <input type="text" value="" name="s" id="s" class="searchbar" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="clearfix"></div>
+    <div id="tab">
+      <ul class="nav">
+        <li><a href="#recent" class="current">Recent<span></span></a></li>
+        <li><a href="#popular">Popular<span></span></a></li>
+        <li><a href="#comment">Comment<span></span></a></li>
+      </ul>
+      <div class="list-wrap">
+        <ul id="recent">
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Donec viverra</a></li>
+        </ul>
+        <ul id="popular" class="hide">
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+        </ul>
+        <ul id="comment" class="hide">
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2>Archives</h2>
+    <ul class="list">
+      <li><a href="#">January 2010</a></li>
+      <li><a href="#">February 2010</a></li>
+      <li><a href="#">March 2010</a></li>
+      <li><a href="#">April 2010</a></li>
+      <li><a href="#">May 2010</a></li>
+      <li><a href="#">June 2010</a></li>
+    </ul>
+    <div class="clearfix"></div>
+    <h2>Flickr</h2>
+    <div class="flickr"> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> <a href="#"><img src="img/803.jpg" alt=""/></a> <a href="#"><img src="img/804.jpg" alt="" /></a> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> </div>
+    <div class="clearfix"></div>
+    <h2>Advertisement</h2>
+    <div class="ads"> <a href="#"><img src="img/tf.gif" alt="" /></a> <a href="#"><img src="img/gr.gif" alt="" /></a> <a href="#"><img src="img/cc.gif" alt="" /></a> <a href="#"><img src="img/ad.gif" alt="" /></a> </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+{% endblock %}
+
