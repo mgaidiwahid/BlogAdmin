@@ -1,0 +1,111 @@
+/* 
+Credits: Bit Repository
+*/
+
+#acf-area { width:500px; overflow: hidden; font-size: 12px; padding: 0; border: 0px none; }
+
+#acf-note { width: 300px; display:none; height:20px; font-size:12px; margin:0; padding:0; padding-top:20px;}
+
+.notification_ok { padding:0; margin:0; }
+.notification_error { color: #bf2525; padding:0; margin:0; }
+
+.hide { display:none; }
+
+div.escts { padding-top:0px; }
+
+/* Label */
+#acf-fields label { display: inline;
+	padding-left:10px;
+	font-size:12px;
+	height: 18px;
+	line-height: 25px; }
+
+
+/* Input, Textarea */
+
+#acf-fields input[type="text"],#acf-fields input[type="email"] { display: block;
+	width: 196px;
+	height: 18px;
+	float: left;
+	text-align: left;
+	padding: 4px 9px 4px 9px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #cfcfcf;
+	margin-bottom:10px;
+	 }
+#acf-fields textarea { display: block;
+	width: 434px;
+	height: 107px;
+	clear: both;
+	border: 0;
+	padding:9px;
+	margin-bottom:10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #cfcfcf; }
+
+
+#acf-fields input.error { padding: 4px 9px 4px 9px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #fd9c9c;}
+#acf-fields select.error { padding: 4px 9px 4px 9px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #fd9c9c; }
+#acf-fields textarea.error { padding:9px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #fd9c9c; }
+
+#acf-fields input.ok { -webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #cfcfcf; }
+#acf-fields select.ok { -webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #cfcfcf; }
+#acf-fields textarea.ok { -webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid #cfcfcf; }
+
+#acf-fields label.error { 
+	display: none;
+ }
+
+
+/* Submit Button */
+#acf-fields .button { background-image:url(../../style/images/send.png);
+background-color: transparent;
+	width:105px;
+	height:31px;
+	float:left;
+	margin-left:92px;
+	cursor: pointer;
+	outline:none;
+	border:0px; }
+
+
+#ajax-loading { margin:0; margin-left:0px; display: none; background: none; }
+
+*:focus { outline: none; }
+
+#acf-area em {
+	font-style: normal;
+}

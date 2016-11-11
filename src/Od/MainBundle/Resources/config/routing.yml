@@ -1,0 +1,23 @@
+od_main_homepage:
+    path:     /
+    defaults: { _controller: OdMainBundle:Home:index }
+od_main_index:
+    pattern:  /index
+    defaults: { _controller: OdMainBundle:Home:index }
+    requirements:
+        _method:  GET
+od_main_contact:
+    pattern:  /contact
+    defaults: { _controller: OdMainBundle:Home:contact }
+    requirements:
+        _method:  GET|POST
+od_main_styles:
+    pattern:  /styles
+    defaults: { _controller: OdMainBundle:Home:styles }
+    requirements:
+        _method:  GET
+od_main_typography:
+    pattern:  /typography
+    defaults: { _controller: OdMainBundle:Home:typography }
+    requirements:
+        _method:  GET

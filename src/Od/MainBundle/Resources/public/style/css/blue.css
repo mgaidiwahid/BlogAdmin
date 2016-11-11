@@ -1,0 +1,33 @@
+body {
+	background-color: #d5dfe8;
+}
+h1.intro {
+	background-image: url(../images/quote1-blue.png);
+}
+h1.intro span {
+	background-image: url(../images/quote2-blue.png);
+}
+h3.intro {
+	background-image: url(../images/quote1-blue.png);
+}
+h3.intro span {
+	background-image: url(../images/quote2-blue.png);
+}
+.ticker ul li .message {
+	background: transparent url(../images/miniquote-blue.png) 0 0 no-repeat;
+}
+.ticker2 ul li .message {
+	background: transparent url(../images/miniquote-blue.png) 0 0 no-repeat;
+}
+.divider {
+	border-top:1px solid #b8c5d0;
+	border-bottom: 1px solid #e9eef2;
+}
+.divider2 {
+	border-top:1px solid #b8c5d0;
+	border-bottom: 1px solid #e9eef2;
+}
+.divider3 {
+	border-top:1px solid #b8c5d0;
+	border-bottom: 1px solid #e9eef2;
+}

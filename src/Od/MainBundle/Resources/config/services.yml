@@ -1,0 +1,4 @@
+services:
+#    od_main.example:
+#        class: Od\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

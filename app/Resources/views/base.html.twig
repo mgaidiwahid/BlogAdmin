@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<meta charset="UTF-8">
+<title>{% block title %} MafiaShare.net{% endblock %} - Free themes & templates </title>
+<link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.png" />
+
+ {% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('style/css/zoombox.css') }}" media="screen" />
+	
+  {% endblock %}
+  
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/css/ie7.css" media="all" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
+<![endif]-->
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('style/js/jquery-1.4.2.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/faded.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/ddsmoothmenu.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/sliding_effect.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/twitter.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/zoombox.js') }}"></script>
+<script type="text/javascript" src="{{ asset('style/js/scripts.js') }}"></script>
+{% endblock %}
+
+<!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
+<body>
+<!-- Begin Header -->
+<div id="header">
+  <!-- Begin Logo -->
+  <div id="logo"><a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="Fadelicious" /></a></div><!-- End Logo -->
+  
+  <!-- Begin Menu -->
+  <div id="menu">
+    <div id="smoothmenu1" class="ddsmoothmenu">
+	{% block navigation %}
+	{% set route = app.request.attributes.get('_route') %}
+      <ul>
+        <li><a href="{{ path('od_main_homepage') }}" {{ route ==  'od_main_homepage' ? 'class="current"' }} >Home</a></li>
+        <li><a href="{{ path('od_main_styles') }}" {% if (route ==  'od_main_styles') or ( route ==  'od_main_typography')%} class="current"{% endif %}  >Features</a>
+          <ul>
+            <li><a href="{{ path('od_main_styles') }}" >Styles</a></li>
+            <li><a href="{{ path('od_main_typography') }}">Typography</a></li>
+            <li><a href="columns.html">Columns</a></li>
+            <li><a href="home.html">Sliders</a>
+              <ul>
+                <li><a href="home.html">Content Slider</a></li>
+                <li><a href="slider3d.html">3D Slider</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="home2.html">Pages</a>
+          <ul>
+            <li><a href="home2.html">Alternative Home</a></li>
+            <li><a href="pagewithsidebar.html">Page with Sidebar</a></li>
+            <li><a href="fullwidth.html">Fullwidth</a></li>
+            <li><a href="footer.html">Footer</a>
+              <ul>
+                <li><a href="footer.html">Alternative Footer</a></li>
+                <li><a href="nofooter.html">No Footer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a>
+          <ul>
+            <li><a href="blog.html">Blog 1</a></li>
+            <li><a href="blog2.html">Blog 2</a></li>
+            <li><a href="post.html">Post Page</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html">Portfolio</a>
+          <ul>
+            <li><a href="portfolio.html">Portfolio 1</a></li>
+            <li><a href="portfolio2.html">Portfolio 2</a></li>
+            <li><a href="portfolio3.html">Portfolio 3</a></li>
+            <li><a href="portfolio4.html">Portfolio 4</a></li>
+            <li><a href="item.html">Portfolio Item</a></li>
+            <li><a href="item2.html">Portfolio Item 2</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ path('od_main_contact') }}" {{ route ==  'od_main_contact' ? 'class="current"' }}>Contact</a></li>
+      </ul>
+	  
+     {% endblock %}
+
+	 <span></span> </div>
+  </div>
+  <div class="clearfix"></div>
+</div><!-- End Menu -->
+<!-- End Header -->
+
+
+{% block body %}{% endblock %}
+
+<!-- Begin Footer -->
+<div id="footer">
+  <div class="footer-content">
+    <div class="col3-wrap">
+    
+       <!-- Begin Recent Posts -->
+      <div class="col3">
+        <h2 class="recentposts">Recent Posts</h2>
+        <ul class="unordered">
+          <li><a href="#">Duis id tellus at eros tempor imper.</a></li>
+          <li><a href="#">Aenean ligula nisl, fermentum vel lobortis id, scelerisque at lorem.</a></li>
+          <li><a href="#">Suspendisse nec neque ut nunc rhoncus sodales.</a></li>
+          <li><a href="#">Duis id Nam pulvinar faucibus dui.</a></li>
+          <li><a href="#">Pellentesque pulvinar sagittis.</a></li>
+        </ul>
+      </div>
+      <!-- Begin Recent Posts -->
+      
+      <!-- Begin Tags -->
+      <div class="col3">
+        <h2 class="tags">Tags</h2>
+        <ul class="tags">
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><a href="#">Manipulation</a></li>
+          <li><a href="#">Textures</a></li>
+          <li><a href="#">Print</a></li>
+          <li><a href="#">Graphic Design</a></li>
+          <li><a href="#">Wallpaper</a></li>
+          <li><a href="#">Coding</a></li>
+          <li><a href="#">Black &amp; White</a></li>
+          <li><a href="#">Stock</a></li>
+          <li><a href="#">Digital Art</a></li>
+          <li><a href="#">Drawings</a></li>
+          <li><a href="#">Vector</a></li>
+          <li><a href="#">Animation</a></li>
+        </ul>
+      </div>
+      <!-- End Tags -->
+      
+      <!-- Begin Twitter -->
+      <div class="col3">
+        <h2 class="twit">Twitter</h2>
+        <div class="twitter">
+          <div class="twitter-top"></div>
+          <div class="twitter-mid">
+            <div class="message" id="twitter"></div>
+            <!-- Twitter --> 
+          </div>
+          <div class="twitter-bottom"></div>
+        </div>
+      </div>
+      <!-- End Twitter -->
+    </div>
+  </div>
+</div>
+<!-- End Footer -->
+
+<!-- Begin Footer Bottom -->
+<div id="footer-bottom">
+  <div id="footer-bottom-light"></div>
+  <div class="footer-bottom-content">
+    <div class="copyright">
+      <p>otsu @ templatep2p.com</p>
+    </div>
+    <div class="social"> <a href="#"><img src="{{ asset('img/social1.png') }}" alt="Facebook" /></a> <a href="#"><img src="{{ asset('img/social2.png') }}" alt="Tumblr" /></a> <a href="#"><img src="{{ asset('img/social3.png') }}" alt="Flickr" /></a> <a href="#"><img src="{{ asset('img/social4.png') }}" alt="StumbleUpon" /></a> <a href="#"><img src="{{ asset('img/social5.png') }}" alt="Del.icio.us" /></a> <a href="#"><img src="{{ asset('img/social6.png') }}" alt="RSS" /></a> </div>
+  </div>
+</div>
+<!-- End Footer Bottom --> 
+
+<script type="text/javascript">
+	$(function(){
+		$("#faded").faded({
+			speed: 500,
+			crossfade: true,
+			bigtarget: false,
+			loading: true,
+			loadingimg: "{{ asset('style/images/loading.gif') }}",
+			autoplay: false,
+			autorestart: 8000,
+			random: false,
+			autopagination:true
+		});
+	});
+	</script>
+</body>
+</html>

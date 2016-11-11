@@ -1,0 +1,52 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+services:
+    # ...
+    admin.Contact:
+        class: Od\MainBundle\Admin\ContactAdmin
+        arguments: [~, Od\MainBundle\Entity\Contact, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Contact }
+    admin.category:
+        class: Od\MainBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Category }		
+        arguments:
+            - ~
+            - Od\MainBundle\Entity\Category
+            - 'PixSortableBehaviorBundle:SortableAdmin'
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]
+    admin.post:
+        class: Od\MainBundle\Admin\PostAdmin
+        arguments: [~, Od\MainBundle\Entity\Post, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label:  Post }
+    admin.image:
+        class: Od\MainBundle\Admin\ImageAdmin
+        arguments: [~, Od\MainBundle\Entity\Image, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label:  Photos }
+    admin.Tags:
+        class: Od\MainBundle\Admin\TagAdmin
+        arguments: [~, Od\MainBundle\Entity\Tag, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Tag }
+    admin.Album:
+        class: Od\MainBundle\Admin\AlbumAdmin
+        arguments: [~, Od\MainBundle\Entity\Album, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Albums }
+    admin.Video:
+        class: Od\MainBundle\Admin\VideoAdmin
+        arguments: [~, Od\MainBundle\Entity\Video, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Videos }
+    gedmo.listener.sortable:
+        class: Gedmo\Sortable\SortableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
