@@ -24,9 +24,13 @@
         "mikeevstropov/sortable-tree-bundle": "^1.1",
         "gedmo/doctrine-extensions": "^2.4",
         "stof/doctrine-extensions-bundle": "^1.2",
+<<<<<<< HEAD
         "pixassociates/sortable-behavior-bundle": "^1.0",
         "sonata-project/user-bundle": "^3.1",
         "sonata-project/easy-extends-bundle": "^2.1"
+=======
+        "pixassociates/sortable-behavior-bundle": "^1.0"
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

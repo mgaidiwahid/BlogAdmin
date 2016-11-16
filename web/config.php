@@ -28,8 +28,11 @@ $symfonyRequirements = new SymfonyRequirements();
 
 $majorProblems = $symfonyRequirements->getFailedRequirements();
 $minorProblems = $symfonyRequirements->getFailedRecommendations();
+<<<<<<< HEAD
 $hasMajorProblems = (bool) count($majorProblems);
 $hasMinorProblems = (bool) count($minorProblems);
+=======
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 
 ?>
 <!DOCTYPE html>
@@ -38,6 +41,7 @@ $hasMinorProblems = (bool) count($minorProblems);
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="robots" content="noindex,nofollow" />
         <title>Symfony Configuration Checker</title>
+<<<<<<< HEAD
         <style>
             /* styles copied from symfony framework bundle */
             html {
@@ -248,6 +252,11 @@ $hasMinorProblems = (bool) count($minorProblems);
                 background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAcCAIAAAAvP0KbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEFJREFUeNpiPnv2LNMdvlymf///M/37B8R/QfQ/MP33L4j+B6Qh7L9//sHpf2h8MA1V+w/KRjYLaDaLCU8vQIABAFO3TxZriO4yAAAAAElFTkSuQmCC) repeat-x top left;
             }
 
+=======
+        <link rel="stylesheet" href="bundles/framework/css/structure.css" media="all" />
+        <link rel="stylesheet" href="bundles/framework/css/body.css" media="all" />
+        <style type="text/css">
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
             /* styles copied from bundles/sensiodistribution/webconfigurator/css/install.css */
             body {
                 font-size: 14px;
@@ -305,10 +314,13 @@ $hasMinorProblems = (bool) count($minorProblems);
             .sf-reset .ko {
                 background-color: #d66;
             }
+<<<<<<< HEAD
             .sf-reset p.help {
                 padding: 12px 16px;
                 word-break: break-word;
             }
+=======
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
             .version {
                 text-align: right;
                 font-size: 10px;
@@ -333,7 +345,11 @@ $hasMinorProblems = (bool) count($minorProblems);
         <div id="content">
             <div class="header clear-fix">
                 <div class="header-logo">
+<<<<<<< HEAD
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAA+CAMAAACxzRGDAAAAUVBMVEX////Ly8yko6WLioxkYmVXVVkwLjLl5eWxsLJKSEzy8vJxcHLY2Ni+vb89Oz9XVVh+fH+Yl5n///+xsbLY2Nlxb3KkpKWXlph+fX+LiYy+vr/IZP61AAAAAXRSTlMAQObYZgAABRBJREFUeNrVmtuWoyAQRS1FEEQSzQU7//+hYxUiXsKQZLJWM+chsUloN+WhCuguYoKyYqzmvGasKqH4HyRKxndipcgcumH8qViTM7TkUclcwaHmf5XM0eWq4km1KjdqXfMXJHVe1J3hL8lk5fCGv6wmT+o0d87U+XNrk0Y9nfv+7LM6ZJH5ZBL6LAbSxQ3Q5FDr22Skr8PQSy4n7isnsQxSX4r6pobhjCHHeDNOKrO3yGmCvZOjV9jmt8ulTdXFKdbKLNh+kOMvBzuVRa4Y7MUsdEUSWQe7xxCfZmcwjHU83LqzFvSbJQOXQvptbPnEFoyZtUUGwTeKuLuTHyT1kaP0P6cR01OKvv448gtl61dqZfmJezQmU/t+1R2fJLtBwXV6uWGwB9SZPrn0fKO2WAvQN1PUhHjTom3xgXYTkvlSKHs19OhslETq6X3HrXbjt8XbGj9b4Gi+lUAnL6XxQj8Pyk9N4Bt1xUrsLVN/3isYMug8rODMdbgOvoHs8uAb2fcANIAzkKCLYy+AXRpSU8sr1r4P67xhLgPp7vM32zlqt7Bhq2fI1Hwp+VgANxok59SsGV3oqdUL0YVDMRY7Yg8QLbVUU4NZNoOq5hJHuxEM28Sh/IyUZ8D3reR+yc58EGvOy2U0HQL6G9V+kWyEWHmzaMx6t4o9RhOm/riUiYrzqij4Ptqkn7AaCXqc+F47m04ahfde7YIz8RHEBN6BdVwdIGRVdNbKqYu1Hc0x0wBY4wqC8+XUgBGnj81SZsQB+0yAS1x/BlI/6ebHHk0lauQLuPDpu6EwAVJ7T0rl2uXa23jcqNyOZekhqYHRz3JOANrF4wCCmEs1f9D1lUe0n4NAATed80Y5e0Q7CO2TezM/BR6wKdgQzKbCF4uOQC3Bk0fKAzbFlyRWg3gksA/gmm7eOjrpaKX7fHlEW2xLbE6GZsPiCiShVzN7RG2xTz2G+OJtEqzdJ7APxy3MrSsV0VukXbKMp9lhs5BN6dr3CN+sySUaoxGwfRUM3I/gdPYONgVU+PLX4vUWm32AvUySarbONvcpV2RQEPKKjEBHFk01kQDGRblnn8ZuE9g+JUl8OWAPbkFK2K6JxhJVvF47FzYYnAN22ttwxKYCoH36rheEB7KG/HF/YUaa2G5JF+55tpyrl7B1WHM39HuP2N2EXPl1UBu8vbj4OjvD+NoTE4ssF+ScARgaJY1N7+u8bY/Y9BSM5PKwJbvMVab32YP5FB5TtcYVrGoASolVLTzI7kVsYVxRtAb5n2JXq1vCdtd47XtYItynrN0835PasLg0y13aOPbmPI+on2Lr9e5tjSHvgkAvclUjL3Fsdaw03IzgTR62yYClk7QMah4IQ0qSsoYYbOix6zJR1ZGDNMOY3Bb6W5S6jiyovep3t7bUPyoq7OkjYumrfESp8zSBc/OLosVf+nTnnKjsqR16++WDwpI8FxJWRFTlI6NKnqYJaL96TqjAbo9Toi5QiWBDcmfdFV+T8dkvFe5bItgstbM2X6QG2mVun+cazfRwOS0eiaeRRJKgLfc3BQAqfnhJyz8lfR6580SF/FXVu83Nz1xrrnFqqXL6Qxl47DNSm4RFflvN5sABDD8peouqLLKQXVdGbnqf+qIpOxON4ZyYdJEJ6sy4zS2c5eRPTT4Jyp46qDE5/ptAWqJOQ9e6yE82FXBbZCk1/tXVoshVoopE3CB0zmraI3nbqCJ/gW3ZMgtbC5nh/QHlOoOZBxQCRgAAAABJRU5ErkJggg==" alt="Symfony" />
+=======
+                    <img src="bundles/framework/images/logo_symfony.png" alt="Symfony" />
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                 </div>
 
                 <div class="search">
@@ -341,7 +357,11 @@ $hasMinorProblems = (bool) count($minorProblems);
                     <div class="form-row">
 
                       <label for="search-id">
+<<<<<<< HEAD
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABUElEQVQoz2NgAIJ29iBdD0d7X2cPb+tY2f9MDMjgP2O2hKu7vS8CBlisZUNSMJ3fxRMkXO61wm2ue6I3iB1q8Z8ZriDZFCS03fm/wX+1/xp/TBo8QPxeqf+MUAW+QIFKj/+q/wX/c/3n/i/6Qd/bx943z/Q/K1SBI1D9fKv/AhCn/Wf5L5EHdFGKw39OqAIXoPpOMziX4T9/DFBBnuN/HqhAEtCKCNf/XDA/rZRyAmrpsvrPDVUw3wrkqCiLaewg6TohX1d7X0ffs5r/OaAKfinmgt3t4ulr4+Xg4ANip3j+l/zPArNT4LNOD0pAgWCSOUIBy3+h/+pXbBa5tni0eMx23+/mB1YSYnENroT5Pw/QSOX/mkCo+l/jgo0v2KJA643s8PgAmsMBDCbu/5xALHPB2husxN9uCzsDOgAq5kAoaZVnYMCh5Ky1r88Eh/+iABM8jUk7ClYIAAAAAElFTkSuQmCC" alt="Search on Symfony website" />
+=======
+                          <img src="bundles/framework/images/grey_magnifier.png" alt="Search on Symfony website" />
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                       </label>
 
                       <input name="q" id="search-id" type="search" placeholder="Search on Symfony website" />
@@ -367,29 +387,48 @@ $hasMinorProblems = (bool) count($minorProblems);
                             ready to run Symfony applications.
                         </p>
 
+<<<<<<< HEAD
                         <?php if ($hasMajorProblems): ?>
+=======
+                        <?php if (count($majorProblems)): ?>
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                             <h2 class="ko">Major problems</h2>
                             <p>Major problems have been detected and <strong>must</strong> be fixed before continuing:</p>
                             <ol>
                                 <?php foreach ($majorProblems as $problem): ?>
+<<<<<<< HEAD
                                     <li><?php echo $problem->getTestMessage() ?>
                                         <p class="help"><em><?php echo $problem->getHelpHtml() ?></em></p>
                                     </li>
+=======
+                                    <li><?php echo $problem->getHelpHtml() ?></li>
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                                 <?php endforeach; ?>
                             </ol>
                         <?php endif; ?>
 
+<<<<<<< HEAD
                         <?php if ($hasMinorProblems): ?>
                             <h2>Recommendations</h2>
                             <p>
                                 <?php if ($hasMajorProblems): ?>Additionally, to<?php else: ?>To<?php endif; ?> enhance your Symfony experience,
+=======
+                        <?php if (count($minorProblems)): ?>
+                            <h2>Recommendations</h2>
+                            <p>
+                                <?php if (count($majorProblems)): ?>Additionally, to<?php else: ?>To<?php endif; ?> enhance your Symfony experience,
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                                 it’s recommended that you fix the following:
                             </p>
                             <ol>
                                 <?php foreach ($minorProblems as $problem): ?>
+<<<<<<< HEAD
                                     <li><?php echo $problem->getTestMessage() ?>
                                         <p class="help"><em><?php echo $problem->getHelpHtml() ?></em></p>
                                     </li>
+=======
+                                    <li><?php echo $problem->getHelpHtml() ?></li>
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                                 <?php endforeach; ?>
                             </ol>
                         <?php endif; ?>
@@ -404,12 +443,20 @@ $hasMinorProblems = (bool) count($minorProblems);
                             </p>
                         <?php endif; ?>
 
+<<<<<<< HEAD
                         <?php if (!$hasMajorProblems && !$hasMinorProblems): ?>
+=======
+                        <?php if (!count($majorProblems) && !count($minorProblems)): ?>
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                             <p class="ok">All checks passed successfully. Your system is ready to run Symfony applications.</p>
                         <?php endif; ?>
 
                         <ul class="symfony-install-continue">
+<<<<<<< HEAD
                             <?php if ($hasMajorProblems || $hasMinorProblems): ?>
+=======
+                            <?php if (count($majorProblems) || count($minorProblems)): ?>
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
                                 <li><a href="config.php">Re-check configuration</a></li>
                             <?php endif; ?>
                         </ul>

@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Symfony Standard Edition
+=======
+Blog Admin - First Edition
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 =======
 Blog Admin - First Edition
 >>>>>>> ec88895ea7008572144f8ece28c129a445138520

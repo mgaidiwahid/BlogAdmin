@@ -6,13 +6,21 @@ $lineSize = 70;
 $symfonyRequirements = new SymfonyRequirements();
 $iniPath = $symfonyRequirements->getPhpIniConfigPath();
 
+<<<<<<< HEAD
 echo_title('Symfony Requirements Checker');
+=======
+echo_title('Symfony2 Requirements Checker');
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 
 echo '> PHP is using the following php.ini file:'.PHP_EOL;
 if ($iniPath) {
     echo_style('green', '  '.$iniPath);
 } else {
+<<<<<<< HEAD
     echo_style('yellow', '  WARNING: No configuration file (php.ini) used by PHP!');
+=======
+    echo_style('warning', '  WARNING: No configuration file (php.ini) used by PHP!');
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 }
 
 echo PHP_EOL.PHP_EOL;
@@ -21,6 +29,10 @@ echo '> Checking Symfony requirements:'.PHP_EOL.'  ';
 
 $messages = array();
 foreach ($symfonyRequirements->getRequirements() as $req) {
+<<<<<<< HEAD
+=======
+    /** @var $req Requirement */
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
     if ($helpText = get_error_message($req, $lineSize)) {
         echo_style('red', 'E');
         $messages['error'][] = $helpText;
@@ -41,9 +53,15 @@ foreach ($symfonyRequirements->getRecommendations() as $req) {
 }
 
 if ($checkPassed) {
+<<<<<<< HEAD
     echo_block('success', 'OK', 'Your system is ready to run Symfony projects');
 } else {
     echo_block('error', 'ERROR', 'Your system is not ready to run Symfony projects');
+=======
+    echo_block('success', 'OK', 'Your system is ready to run Symfony2 projects');
+} else {
+    echo_block('error', 'ERROR', 'Your system is not ready to run Symfony2 projects');
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 
     echo_title('Fix the following mandatory requirements', 'red');
 
@@ -119,6 +137,7 @@ function echo_block($style, $title, $message)
 
     echo PHP_EOL.PHP_EOL;
 
+<<<<<<< HEAD
     echo_style($style, str_repeat(' ', $width));
     echo PHP_EOL;
     echo_style($style, str_pad(' ['.$title.']', $width, ' ', STR_PAD_RIGHT));
@@ -127,6 +146,12 @@ function echo_block($style, $title, $message)
     echo PHP_EOL;
     echo_style($style, str_repeat(' ', $width));
     echo PHP_EOL;
+=======
+    echo_style($style, str_repeat(' ', $width).PHP_EOL);
+    echo_style($style, str_pad(' ['.$title.']', $width, ' ', STR_PAD_RIGHT).PHP_EOL);
+    echo_style($style, str_pad($message, $width, ' ', STR_PAD_RIGHT).PHP_EOL);
+    echo_style($style, str_repeat(' ', $width).PHP_EOL);
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 }
 
 function has_color_support()

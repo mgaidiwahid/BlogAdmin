@@ -168,9 +168,12 @@ class PhpIniRequirement extends Requirement
  */
 class RequirementCollection implements IteratorAggregate
 {
+<<<<<<< HEAD
     /**
      * @var Requirement[]
      */
+=======
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
     private $requirements = array();
 
     /**
@@ -268,7 +271,11 @@ class RequirementCollection implements IteratorAggregate
     /**
      * Returns both requirements and recommendations.
      *
+<<<<<<< HEAD
      * @return Requirement[]
+=======
+     * @return array Array of Requirement instances
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
      */
     public function all()
     {
@@ -278,7 +285,11 @@ class RequirementCollection implements IteratorAggregate
     /**
      * Returns all mandatory requirements.
      *
+<<<<<<< HEAD
      * @return Requirement[]
+=======
+     * @return array Array of Requirement instances
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
      */
     public function getRequirements()
     {
@@ -295,7 +306,11 @@ class RequirementCollection implements IteratorAggregate
     /**
      * Returns the mandatory requirements that were not met.
      *
+<<<<<<< HEAD
      * @return Requirement[]
+=======
+     * @return array Array of Requirement instances
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
      */
     public function getFailedRequirements()
     {
@@ -312,7 +327,11 @@ class RequirementCollection implements IteratorAggregate
     /**
      * Returns all optional recommendations.
      *
+<<<<<<< HEAD
      * @return Requirement[]
+=======
+     * @return array Array of Requirement instances
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
      */
     public function getRecommendations()
     {
@@ -329,7 +348,11 @@ class RequirementCollection implements IteratorAggregate
     /**
      * Returns the recommendations that were not met.
      *
+<<<<<<< HEAD
      * @return Requirement[]
+=======
+     * @return array Array of Requirement instances
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
      */
     public function getFailedRecommendations()
     {
@@ -379,8 +402,12 @@ class RequirementCollection implements IteratorAggregate
  */
 class SymfonyRequirements extends RequirementCollection
 {
+<<<<<<< HEAD
     const LEGACY_REQUIRED_PHP_VERSION = '5.3.3';
     const REQUIRED_PHP_VERSION = '5.5.9';
+=======
+    const REQUIRED_PHP_VERSION = '5.3.3';
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 
     /**
      * Constructor that initializes the requirements.
@@ -390,6 +417,7 @@ class SymfonyRequirements extends RequirementCollection
         /* mandatory requirements follow */
 
         $installedPhpVersion = phpversion();
+<<<<<<< HEAD
         $requiredPhpVersion = $this->getPhpRequiredVersion();
 
         $this->addRecommendation(
@@ -409,6 +437,17 @@ class SymfonyRequirements extends RequirementCollection
                 sprintf('Install PHP %s or newer (installed version is %s)', $requiredPhpVersion, $installedPhpVersion)
             );
         }
+=======
+
+        $this->addRequirement(
+            version_compare($installedPhpVersion, self::REQUIRED_PHP_VERSION, '>='),
+            sprintf('PHP version must be at least %s (%s installed)', self::REQUIRED_PHP_VERSION, $installedPhpVersion),
+            sprintf('You are running PHP version "<strong>%s</strong>", but Symfony needs at least PHP "<strong>%s</strong>" to run.
+                Before using Symfony, upgrade your PHP installation, preferably to the latest version.',
+                $installedPhpVersion, self::REQUIRED_PHP_VERSION),
+            sprintf('Install PHP %s or newer (installed version is %s)', self::REQUIRED_PHP_VERSION, $installedPhpVersion)
+        );
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 
         $this->addRequirement(
             version_compare($installedPhpVersion, '5.3.16', '!='),
@@ -439,6 +478,7 @@ class SymfonyRequirements extends RequirementCollection
             'Change the permissions of either "<strong>app/logs/</strong>" or  "<strong>var/logs/</strong>" directory so that the web server can write into it.'
         );
 
+<<<<<<< HEAD
         if (version_compare($installedPhpVersion, '7.0.0', '<')) {
             $this->addPhpIniRequirement(
                 'date.timezone', true, false,
@@ -448,6 +488,15 @@ class SymfonyRequirements extends RequirementCollection
         }
 
         if (false !== $requiredPhpVersion && version_compare($installedPhpVersion, $requiredPhpVersion, '>=')) {
+=======
+        $this->addPhpIniRequirement(
+            'date.timezone', true, false,
+            'date.timezone setting must be set',
+            'Set the "<strong>date.timezone</strong>" setting in php.ini<a href="#phpini">*</a> (like Europe/Paris).'
+        );
+
+        if (version_compare($installedPhpVersion, self::REQUIRED_PHP_VERSION, '>=')) {
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
             $timezones = array();
             foreach (DateTimeZone::listAbbreviations() as $abbreviations) {
                 foreach ($abbreviations as $abbreviation) {
@@ -693,6 +742,7 @@ class SymfonyRequirements extends RequirementCollection
                 'Upgrade your <strong>intl</strong> extension with a newer ICU version (4+).'
             );
 
+<<<<<<< HEAD
             if (class_exists('Symfony\Component\Intl\Intl')) {
                 $this->addRecommendation(
                     \Symfony\Component\Intl\Intl::getIcuDataVersion() <= \Symfony\Component\Intl\Intl::getIcuVersion(),
@@ -708,6 +758,8 @@ class SymfonyRequirements extends RequirementCollection
                 }
             }
 
+=======
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
             $this->addPhpIniRecommendation(
                 'intl.error_level',
                 create_function('$cfgValue', 'return (int) $cfgValue === 0;'),
@@ -739,9 +791,15 @@ class SymfonyRequirements extends RequirementCollection
 
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             $this->addRecommendation(
+<<<<<<< HEAD
                 $this->getRealpathCacheSize() >= 5 * 1024 * 1024,
                 'realpath_cache_size should be at least 5M in php.ini',
                 'Setting "<strong>realpath_cache_size</strong>" to e.g. "<strong>5242880</strong>" or "<strong>5M</strong>" in php.ini<a href="#phpini">*</a> may improve performance on Windows significantly in some cases.'
+=======
+                $this->getRealpathCacheSize() > 1000,
+                'realpath_cache_size should be above 1024 in php.ini',
+                'Set "<strong>realpath_cache_size</strong>" to e.g. "<strong>1024</strong>" in php.ini<a href="#phpini">*</a> to improve performance on windows.'
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
             );
         }
 
@@ -792,6 +850,7 @@ class SymfonyRequirements extends RequirementCollection
                 return (int) $size;
         }
     }
+<<<<<<< HEAD
 
     /**
      * Defines PHP required version from Symfony version.
@@ -816,4 +875,6 @@ class SymfonyRequirements extends RequirementCollection
 
         return false;
     }
+=======
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 }
