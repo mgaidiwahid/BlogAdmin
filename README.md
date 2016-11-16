@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Symfony Standard Edition
+=======
+Blog Admin - First Edition
+>>>>>>> ec88895ea7008572144f8ece28c129a445138520
 ========================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
