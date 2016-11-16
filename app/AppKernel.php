@@ -31,6 +31,13 @@ class AppKernel extends Kernel
 			
 			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 			new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
+			
+			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+			
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),			
             
         );
 
