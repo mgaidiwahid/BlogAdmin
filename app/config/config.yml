@@ -63,22 +63,17 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
-<<<<<<< HEAD
+
         types:
             json: Sonata\Doctrine\Types\JsonType
-=======
->>>>>>> ec88895ea7008572144f8ece28c129a445138520
+
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
-<<<<<<< HEAD
-   
 
-=======
->>>>>>> ec88895ea7008572144f8ece28c129a445138520
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -94,7 +89,7 @@ sonata_block:
             contexts: [admin]
         sonata.admin.block.search_result:
             contexts: [admin]
-<<<<<<< HEAD
+
         sonata.user.block.menu:    # used to display the menu in profile pages
         sonata.user.block.account: # used to display menu option (login option)
         sonata.block.service.text: # used to if you plan to use Sonata user routes
@@ -117,9 +112,9 @@ sonata_admin:
 sonata_user:
     security_acl: true
     manager_type: orm
-=======
+
 sonata_admin:
 
     templates:
         edit:                SonataAdminBundle:CRUD:edit.html.twig
->>>>>>> ec88895ea7008572144f8ece28c129a445138520
+

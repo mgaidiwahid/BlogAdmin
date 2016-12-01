@@ -31,7 +31,7 @@ class AppKernel extends Kernel
 			
 			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 			new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
-<<<<<<< HEAD
+
 			
 			new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
 			
@@ -39,8 +39,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
 
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),			
-=======
->>>>>>> ec88895ea7008572144f8ece28c129a445138520
+
             
         );
 
