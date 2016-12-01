@@ -8,11 +8,17 @@
 <div id="slider">
   <div id="slider-wrapper">
     <div id="faded">
-      <div class="rap"> <img src="{{ asset('img/big1.jpg') }}" alt="" />
-        <div>
-          <iframe src="http://player.vimeo.com/video/14200462?title=0&amp;byline=0&amp;portrait=0" width="930" height="350"></iframe>
-        </div>
-        <img src="{{ asset('img/big2.jpg') }}" alt="" /> <img src="{{ asset('img/big3.jpg') }}" alt="" /> <img src="{{ asset('img/big4.jpg') }}" alt="" /> </div>
+      <div class="rap">
+	    {% for post in SliderPosts %}
+		
+		<img src="{{ asset(['images/', post.photo]|join) }}" alt="{{ post.title}}"  width="930" height="365"/>
+		<!--<div><iframe src="http://player.vimeo.com/video/14200462?title=0&amp;byline=0&amp;portrait=0" width="930" height="350"></iframe></div>-->
+		
+		{% endfor %}
+     
+        
+        
+		</div>
       <div class="move"> <a href="#" class="prev">prev</a> <a href="#" class="next">next</a> </div>
     </div>
   </div>
@@ -23,50 +29,32 @@
 <!-- Begin Container -->
 <div id="container">
  <!-- Begin Intro -->
- <h1 class="intro">Hi! This is Fadelicious. New unique look for your blog &amp; portfolio. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum.<span></span></h1><!-- End Intro -->
+ {% for intro in IntroPosts %}
+ <h1 class="intro">{{ intro.title}}<span></span></h1>
+ {% endfor %}
+     
+ <!-- End Intro -->
   
   <!-- Begin 4 Columns -->
   <div class="col4-wrap">
   
+  
+  
   	<!-- Begin 1st Col -->
-    <div class="col4 center"> <img src="{{ asset('img/icn-package.png') }}" width="62" height="64" class="center" alt="" />
-      <h3>Package Design</h3>
-      <p>Praesent erat anteport hanip, condimentum quis facilisisac condimentum in ipsum. </p>
+	{% for service in services %}
+    <div class="col4 center"> <img src="{{ asset(['images/', service.photo]|join) }}"" width="62" height="64" class="center" alt="{{service.title }}" />
+      <h3>{{service.title }}</h3>
+      <p>{{service.body|raw('html') }}</p>
       <div class="view">
         <div class="button blue">View Details<span></span></div>
       </div>
     </div>
+	{% endfor %}
     <!-- Begin 1st Col -->
     
-    <!-- Begin 2nd Col -->
-    <div class="col4 center"> <img src="{{ asset('img/icn-web.png') }}" width="63" height="64" class="center" alt="" />
-      <h3>Web Design</h3>
-      <p>Sed sit amet tortor vel risus volut pretium non at estar. Maecenas vitae lectus moles.</p>
-      <div class="view">
-        <div class="button">View Details<span></span></div>
-      </div>
-    </div>
-    <!-- Begin 2nd Col -->
     
-    <!-- Begin 3rd Col -->
-    <div class="col4 center"> <img src="{{ asset('img/icn-commerce.png') }}" width="63" height="64" class="center" alt="" />
-      <h3>E-Commerce</h3>
-      <p>Praesent erat anteport hanip, condimentum quis facilisisac condimentum in ipsum. </p>
-      <div class="view">
-        <div class="button">View Details<span></span></div>
-      </div>
-    </div>
-    <!-- Begin 3rd Col -->
     
-    <!-- Begin 4th Col -->
-    <div class="col4 center"> <img src="{{ asset('img/icn-support.png') }}" width="62" height="64" class="center" alt="" />
-      <h3>Full Support</h3>
-      <p>Curabitur nulla antenov, ullamcor iaculis utar, convallis ac massa erat anteport hanip. </p>
-      <div class="view">
-        <div class="button">View Details<span></span></div>
-      </div>
-    </div>
-    <!-- Begin 4th Col -->
+   
     
   </div>
   <!-- End 4 Columns -->
@@ -78,10 +66,10 @@
     <!-- Begin 1st Col -->
     <div class="col2">
       <h2 class="about">About Us</h2>
-      <p><span class="dropcap">N</span>eque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-      <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-      <a href="item.html" class="button2">Read more about us<span></span></a> </div><!-- End 1st Col -->
-    
+      {% for about in aboutus %}
+	  {{ about.body|raw('html') }}
+      <a href="content/{{ about.id }}" class="button2">Read more about us<span></span></a> </div>
+    {% endfor %}
      <!-- Begin 2nd Col -->
     <div class="col2">
     
@@ -89,14 +77,10 @@
       <div class="latest">
         <h2 class="work">Latest Work</h2>
         <ul class="frame">
-          <li><a href="{{ asset('img/full1.jpg') }}" rel="zoombox[latest]" title="1"><img src="{{ asset('img/801.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full2.jpg') }}" rel="zoombox[latest]" title="2"><img src="{{ asset('img/802.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full3.jpg') }}" rel="zoombox[latest]" title="3"><img src="{{ asset('img/803.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full4.jpg') }}" rel="zoombox[latest]" title="4"><img src="{{ asset('img/804.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full1.jpg') }}" rel="zoombox[latest]" title="5"><img src="{{ asset('img/801.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full2.jpg') }}" rel="zoombox[latest]" title="6"><img src="{{ asset('img/802.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full3.jpg') }}" rel="zoombox[latest]" title="7"><img src="{{ asset('img/803.jpg') }}" alt="" class="left small" /></a></li>
-          <li><a href="{{ asset('img/full4.jpg') }}" rel="zoombox[latest]" title="8"><img src="{{ asset('img/804.jpg') }}" alt="" class="left small" /></a></li>
+		{% for album in latest_work %}
+          <li><a href="{{ asset(['images/', album.photo]|join) }}" rel="zoombox[latest]" title="1"><img src="{{ asset(['images/', album.photo]|join) }}" width="80" height="80" alt="{{ album.title }}" class="left small" /></a></li>
+		 {% endfor %}
+          
         </ul>
       </div>
       <!-- End Latest Works -->

@@ -181,7 +181,7 @@ class Image {
     }
 	
 	public function __toString(){
-    return $this->title;
+    return $this->filename;
     }
 
 	
