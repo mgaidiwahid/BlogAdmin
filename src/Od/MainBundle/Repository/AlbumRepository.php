@@ -10,4 +10,20 @@ namespace Od\MainBundle\Repository;
  */
 class AlbumRepository extends \Doctrine\ORM\EntityRepository
 {
+	
+	public function getAlbums($limit= null)
+    {
+            
+        $em = $this->getEntityManager();
+        $albums = $em->createQueryBuilder('a')
+             ->add('select', 'a')
+             ->add('from', 'OdMainBundle:Album a')
+			 ->Where('a.status=1')			 
+             ->getQuery()
+             ->setMaxResults($limit)->getResult();
+		
+		return $albums;		  
+
+    }
+	
 }

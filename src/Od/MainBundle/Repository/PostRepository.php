@@ -2,6 +2,8 @@
 
 namespace Od\MainBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+
 /**
  * PostRepository
  *
@@ -10,4 +12,34 @@ namespace Od\MainBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+	
+	public function getSliderPosts($limit = null)
+    {
+  
+        $em = $this->getEntityManager();
+        $posts = $em->createQueryBuilder('p')
+             ->add('select', 'p')
+             ->add('from', 'OdMainBundle:Post p')
+			 ->Where('p.status=1')			 
+             ->getQuery()
+             ->setMaxResults($limit)->getResult();
+		
+		return $posts;
+    }
+	
+		
+	public function getPosts($categoryId = null, $limit= null)
+    {
+            
+		  $qb = $this->createQueryBuilder('p');
+		       $qb->join('p.categories', 'c')
+		          ->where($qb->expr()->in('c.id', $categoryId))
+				  ->groupby('c.id', 'p.id')
+				  ->setMaxResults($limit);
+
+		  return $qb->getQuery()
+					->getResult();			  
+
+    }
+	
 }

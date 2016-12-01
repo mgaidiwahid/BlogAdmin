@@ -15,7 +15,43 @@ class HomeController extends Controller
 {
 	public function indexAction()
     {
-        return $this->render('OdMainBundle:Home:index.html.twig');
+	
+	/*
+	* A-la-une
+	*/
+		$em = $this->getDoctrine()
+                   ->getEntityManager();
+	    $SliderPosts = $em->getRepository('OdMainBundle:Post')
+                          ->getPosts(3,3); 		
+	/*
+	* Intro
+	*/	
+     	$IntroPosts = $em->getRepository('OdMainBundle:Post')
+                    ->getPosts(2, 1); 
+					
+					
+	/*
+	* Abous us
+	*/					
+     	$aboutus = $em->getRepository('OdMainBundle:Post')
+                    ->getPosts(5, 1); 	
+					
+	/*
+	* services
+	*/					
+     	$services = $em->getRepository('OdMainBundle:Post')
+                    ->getPosts(6, 4); 	
+
+	/*
+	* Latest Work
+	*/					
+     	$latest_work = $em->getRepository('OdMainBundle:Album')
+                    ->getAlbums(8); 					
+					
+	    return $this->render('OdMainBundle:Home:index.html.twig', 
+		       array('SliderPosts' => $SliderPosts, 'IntroPosts' => $IntroPosts, 'aboutus' => $aboutus, 'services' => $services, 'latest_work' => $latest_work
+
+        ));
     }
 	
 	
