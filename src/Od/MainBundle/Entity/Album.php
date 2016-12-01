@@ -64,7 +64,7 @@ class Album
 	private $publicationDate;
 	
 	/**
-	 * @Gedmo\Slug(fields={"title"}, updatable=false, separator="_")
+	 * @Gedmo\Slug(fields={"title"}, updatable=true, separator="_")
 	 * @ORM\Column(length=255, unique=true)
 	 */
 	protected $slug;

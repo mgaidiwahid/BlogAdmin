@@ -100,6 +100,7 @@
 
 <!-- Begin Footer -->
 <div id="footer">
+
   <div class="footer-content">
     <div class="col3-wrap">
     
@@ -107,11 +108,9 @@
       <div class="col3">
         <h2 class="recentposts">Recent Posts</h2>
         <ul class="unordered">
-          <li><a href="#">Duis id tellus at eros tempor imper.</a></li>
-          <li><a href="#">Aenean ligula nisl, fermentum vel lobortis id, scelerisque at lorem.</a></li>
-          <li><a href="#">Suspendisse nec neque ut nunc rhoncus sodales.</a></li>
-          <li><a href="#">Duis id Nam pulvinar faucibus dui.</a></li>
-          <li><a href="#">Pellentesque pulvinar sagittis.</a></li>
+		{% for recent_post in recent_posts %}
+          <li><a href="/content/{{ recent_post.id}}/{{ recent_post.slug}}">{{ recent_post.title}}</a></li>
+        {% endfor %}
         </ul>
       </div>
       <!-- Begin Recent Posts -->
@@ -154,6 +153,9 @@
       <!-- End Twitter -->
     </div>
   </div>
+
+
+
 </div>
 <!-- End Footer -->
 

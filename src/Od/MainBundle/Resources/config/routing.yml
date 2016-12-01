@@ -21,3 +21,17 @@ od_main_typography:
     defaults: { _controller: OdMainBundle:Home:typography }
     requirements:
         _method:  GET
+
+od_main_post_show:
+    pattern:  /{id}/{slug}
+    defaults: { _controller: OdMainBundle:Post:show }
+    requirements:
+        _method:  GET
+        slug: "[a-zA-Z0-9-_/]+"
+        id: \d+
+
+od_main_footer:
+    pattern:  /index
+    defaults: { _controller: OdMainBundle:footer }
+    requirements:
+        _method:  GET

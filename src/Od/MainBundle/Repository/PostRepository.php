@@ -13,14 +13,15 @@ use Doctrine\ORM\EntityRepository;
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
 	
-	public function getSliderPosts($limit = null)
+	public function getRecentPosts($limit = null)
     {
   
         $em = $this->getEntityManager();
         $posts = $em->createQueryBuilder('p')
              ->add('select', 'p')
              ->add('from', 'OdMainBundle:Post p')
-			 ->Where('p.status=1')			 
+			 ->Where('p.status=1')
+			 ->orderBy('p.publicationDate', 'DESC')		 
              ->getQuery()
              ->setMaxResults($limit)->getResult();
 		

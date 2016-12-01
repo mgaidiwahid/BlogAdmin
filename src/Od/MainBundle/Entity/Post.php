@@ -4,7 +4,7 @@ namespace Od\MainBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Post
  *
@@ -65,7 +65,13 @@ class Post
 	 * @ORM\Column(name="publicationDate", type="datetime")
      */
 	private $publicationDate;
-	
+
+	/**
+	 * @Gedmo\Slug(fields={"title"}, updatable=false, separator="_")
+	 * @ORM\Column(length=255, unique=true)
+	 */
+	protected $slug;
+
     /**
      * @ORM\ManyToMany(targetEntity="Od\MainBundle\Entity\Category", cascade={"persist", "refresh"})
      */
@@ -252,7 +258,10 @@ class Post
     return $this->tags;
 
     }
-
+	public function getSlug()
+    {
+        return $this->slug;
+    }
 	/**
  * Manages the copying of the file to the relevant place on the server
  */

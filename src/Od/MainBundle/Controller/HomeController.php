@@ -46,10 +46,17 @@ class HomeController extends Controller
 	* Latest Work
 	*/					
      	$latest_work = $em->getRepository('OdMainBundle:Album')
-                    ->getAlbums(8); 					
+                    ->getAlbums(8); 	
+
+	/*
+	* Recent Posts
+	*/					
+     	$recent_posts = $em->getRepository('OdMainBundle:Post')
+                    ->getRecentPosts(5);
+//dump($recent_posts);	die();				
 					
 	    return $this->render('OdMainBundle:Home:index.html.twig', 
-		       array('SliderPosts' => $SliderPosts, 'IntroPosts' => $IntroPosts, 'aboutus' => $aboutus, 'services' => $services, 'latest_work' => $latest_work
+		       array('SliderPosts' => $SliderPosts, 'IntroPosts' => $IntroPosts, 'aboutus' => $aboutus, 'services' => $services, 'recent_posts' => $recent_posts, 'latest_work' => $latest_work
 
         ));
     }
