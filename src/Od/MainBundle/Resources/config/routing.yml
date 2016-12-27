@@ -23,7 +23,7 @@ od_main_typography:
         _method:  GET
 
 od_main_post_show:
-    pattern:  /{id}/{slug}
+    pattern:  /content/{id}/{slug}
     defaults: { _controller: OdMainBundle:Post:show }
     requirements:
         _method:  GET

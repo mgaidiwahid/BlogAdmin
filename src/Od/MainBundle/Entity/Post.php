@@ -79,6 +79,7 @@ class Post
 	
 	/**
      * @ORM\ManyToMany(targetEntity="Od\MainBundle\Entity\Tag", cascade={"persist", "refresh"})
+	 * @ORM\JoinTable(name="post_tag")
      */
     private $tags;
 	

@@ -109,7 +109,8 @@
         <h2 class="recentposts">Recent Posts</h2>
         <ul class="unordered">
 		{% for recent_post in recent_posts %}
-          <li><a href="/content/{{ recent_post.id}}/{{ recent_post.slug}}">{{ recent_post.title}}</a></li>
+		
+          <li><a href="{{ path('od_main_post_show', { 'id': recent_post.id, 'slug': recent_post.slug }) }}">{{ recent_post.title}}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -119,21 +120,10 @@
       <div class="col3">
         <h2 class="tags">Tags</h2>
         <ul class="tags">
-          <li><a href="#">Photography</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Illustration</a></li>
-          <li><a href="#">Manipulation</a></li>
-          <li><a href="#">Textures</a></li>
-          <li><a href="#">Print</a></li>
-          <li><a href="#">Graphic Design</a></li>
-          <li><a href="#">Wallpaper</a></li>
-          <li><a href="#">Coding</a></li>
-          <li><a href="#">Black &amp; White</a></li>
-          <li><a href="#">Stock</a></li>
-          <li><a href="#">Digital Art</a></li>
-          <li><a href="#">Drawings</a></li>
-          <li><a href="#">Vector</a></li>
-          <li><a href="#">Animation</a></li>
+		{% for tag in tags %}
+          <li><a href="#">{{ tag.name}}</a>({{ tag.id|count_post(tag.id) }})  </li>
+		  {% endfor %}  
+          
         </ul>
       </div>
       <!-- End Tags -->

@@ -1,0 +1,219 @@
+{% extends '::base.html.twig' %} 
+
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+
+{% block body %}
+<!-- Begin Container -->
+<div id="container">
+   <!-- Begin Page Intro -->
+  <h3 class="intro">Hi! This is an intro for the page. Aliquam dignissim facilisis est vel laoreet. Sed pulvinar neque nec turpis congue lobortis. Aliquam aliquam turpis est. Morbi eu feugiat leo. Vivamus commodo nisi sed dui scelerisque et molestie ante imperdiet. Nulla ultricies nulla eu massa rhoncus at mattis erat eleifend. Praesent id massa massa. Proin nec lectus diam aliquam.<span></span></h3><!-- End Page Intro -->
+  
+   <!-- Begin Blog Content -->
+  <div id="content">
+  
+  <!-- Begin Post -->
+    <div class="post">
+    
+    <!-- Begin Post Info-->
+      <div class="meta">
+        <div class="date">
+          <div class="year">{{ blog.publicationDate|date('Y') }}</div>
+          <div class="day">{{ blog.publicationDate|date('d') }}</div>
+          <div class="month">{{ blog.publicationDate|date('M') }}</div>
+        </div>
+        <div class="info">
+          <h2>{{ blog.title }}</h2>
+          <p>Posted by <a href="#">admin</a> under 
+		   {% for categorie in categ %}		   
+		    <a href="#">{{ categorie.name }}</a>		
+			{% if loop.last == false %},{% endif %}		
+		   {% endfor %}	
+			| <a href="#">23 Comments</a></p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <!-- End Post Info-->
+      
+      
+      <img src="{{ asset(['images/', blog.photo]|join) }}" alt="{{ blog.title|striptags }}" width="630" /><!-- Post Image -->
+      
+      <!-- Begin Post Text -->
+      <p><span class="dropcap"> {{blog.body|striptags|first}}</span>{{ blog.body|raw }}</p>
+       <!-- End Post Text -->
+       
+       
+    </div><!-- End Post -->
+    
+    
+    <!-- Begin Comments -->
+    <div id="comments">
+      <h3>4 Comments to "{{ blog.title }}"</h3>
+      <ol id="singlecomments" class="commentlist">
+        <li class= "clearfix">
+          <div class="user"><img alt="" src="img/801.jpg" height="80" width="80" class="avatar" /></div>
+          <div class="message">
+            <div class="info">
+              <h2><a href="#">Jacqueline</a></h2>
+              <a class="reply-link" href="#">Reply</a>
+              <p>February 21, 2010</p>
+            </div>
+            <p>Quisque tristique tincidunt metus non aliquam. Quisque ac risus sit amet quam sollicitudin vestibulum vitae malesuada libero. Mauris magna elit, suscipit non ornare et, blandit a tellus. Pellentesque dignissim ornare elit, quis mattis eros sodales ac.</p>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <ul class="children">
+          <li class= "clearfix">
+            <div class="user"><img alt="" src="img/802.jpg" height="80" width="80" class="avatar" /></div>
+            <div class="message">
+              <div class="info">
+                <h2><a href="#">Mathieu</a></h2>
+                <a class="reply-link" href="#">Reply</a>
+                <p>February 22, 2010</p>
+              </div>
+              <p>Quisque tristique tincidunt metus non aliquam. Quisque ac risus sit amet quam sollicitudin vestibulum vitae malesuada libero. Mauris magna elit, suscipit non ornare et, blandit a tellus. Pellentesque dignissim ornare elit, quis mattis eros sodales ac.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <ul class="children">
+            <li class= "clearfix">
+              <div class="user"><img alt="" src="img/803.jpg" height="80" width="80" class="avatar" /></div>
+              <div class="message">
+                <div class="info">
+                  <h2><a href="#">Charlene</a></h2>
+                  <a class="reply-link" href="#">Reply</a>
+                  <p>April 4, 2010</p>
+                </div>
+                <p>Quisque tristique tincidunt metus non aliquam. Quisque ac risus sit amet quam sollicitudin vestibulum vitae malesuada libero. Mauris magna elit, suscipit non ornare et, blandit a tellus. Pellentesque dignissim ornare elit, quis mattis eros sodales ac.</p>
+              </div>
+              <div class="clear"></div>
+            </li>
+            </li>
+          </ul>
+          </li>
+        </ul>
+        </li>
+        <li class= "clearfix">
+          <div class="user"><img alt="" src="img/804.jpg" height="80" width="80" class="avatar" /></div>
+          <div class="message">
+            <div class="info">
+              <h2><a href="#">Isabel</a></h2>
+              <a class="reply-link" href="#">Reply</a>
+              <p>August 20, 2010</p>
+            </div>
+            <p>Quisque tristique tincidunt metus non aliquam. Quisque ac risus sit amet quam sollicitudin vestibulum vitae malesuada libero. Mauris magna elit, suscipit non ornare et, blandit a tellus. Pellentesque dignissim ornare elit, quis mattis eros sodales ac.</p>
+          </div>
+          <div class="clear"></div>
+        </li>
+        </li>
+        </li>
+      </ol>
+    </div>
+    <!-- End Comments -->
+    
+    
+    <!-- Begin Form -->
+    <div class="comment-form">
+      <h3>Would you like to share your thoughts?</h3>
+      <form name="form_name" action="" method="post">
+        <div>
+          <input type="text" name="first" id="first" />
+          <label for="first">Name (required) </label>
+        </div>
+        <div>
+          <input type="text" name="first" id="first" />
+          <label for="first">E-Mail (required. will not be published) </label>
+        </div>
+        <div>
+          <input type="text" name="first" id="first" />
+          <label for="first">Website (optional) </label>
+        </div>
+        <div>
+          <textarea name="textarea" id="textarea" rows="5" cols="30"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- End Form -->
+    
+  </div>
+  <!-- End Blog Content -->
+ <!-- Begin Sidebar -->
+  <div id="sidebar">
+  	 <!-- Begin Search -->
+    <div class="searchbox">
+      <form method="get" id="searchform" action="">
+        <input type="text" value="" name="s" id="s" class="searchbar" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <!--End Search -->
+    <div class="clearfix"></div>
+    
+    <!-- Begin Tabbed Content -->
+    <div id="tab">
+      <ul class="nav">
+        <li><a href="#recent" class="current">Recent<span></span></a></li>
+        <li><a href="#popular">Popular<span></span></a></li>
+        <li><a href="#comment">Comment<span></span></a></li>
+      </ul>
+      <div class="list-wrap">
+        <ul id="recent">
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Donec viverra</a></li>
+        </ul>
+        <ul id="popular" class="hide">
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+          <li><a href="#">Phasellus risus quam</a></li>
+        </ul>
+        <ul id="comment" class="hide">
+          <li><a href="#">Phasellus risus quam</a></li>
+          <li><a href="#">Vivamus vitae aliquam</a></li>
+          <li><a href="#">Morbi sit amet odio</a></li>
+          <li><a href="#">Suspendisse potenti</a></li>
+          <li><a href="#">Estibulum eget nunc</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Tabbed Content -->
+     
+    <!-- Begin Archives List -->
+    <h2>Archives</h2>
+    <ul class="list">
+      <li><a href="#">January 2010</a></li>
+      <li><a href="#">February 2010</a></li>
+      <li><a href="#">March 2010</a></li>
+      <li><a href="#">April 2010</a></li>
+      <li><a href="#">May 2010</a></li>
+      <li><a href="#">June 2010</a></li>
+    </ul>
+    <!-- End Archives List -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Begin Flickr List -->
+    <h2>Flickr</h2>
+    <div class="flickr"> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> <a href="#"><img src="img/803.jpg" alt=""/></a> <a href="#"><img src="img/804.jpg" alt="" /></a> <a href="#"><img src="img/801.jpg" alt="" /></a> <a href="#"><img src="img/802.jpg" alt="" /></a> </div>
+    <div class="clearfix"></div>
+    <!-- End Flickr List -->
+    
+    <!-- Begin Ads List -->
+    <h2>Advertisement</h2>
+    <div class="ads"> <a href="#"><img src="img/tf.gif" alt="" /></a> <a href="#"><img src="img/gr.gif" alt="" /></a> <a href="#"><img src="img/cc.gif" alt="" /></a> <a href="#"><img src="img/ad.gif" alt="" /></a> </div>
+     <!-- End Ads List -->
+     
+  </div>
+  <!-- End Sidebar -->
+</div>
+<div class="clearfix"></div>
+<!-- End Container -->
+
+
+  {% endblock %}

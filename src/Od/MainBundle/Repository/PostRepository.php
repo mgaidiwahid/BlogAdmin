@@ -43,4 +43,23 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
 
     }
 	
+	
+	
+	function findPostBytag($tagid){
+
+		$qb = $this->createQueryBuilder('a');
+		$qb->select('COUNT(a)');
+		$qb->where('a.status = :status');
+		$qb->setParameter('status', 1);
+		
+		$qb->innerJoin('a.tags', 't');
+		$qb->andWhere('t.id = :tagid');
+		$qb->setParameter('tagid', $tagid);
+
+		return $count = $qb->getQuery()->getSingleScalarResult();
+			
+		
+		
+	}
+	
 }

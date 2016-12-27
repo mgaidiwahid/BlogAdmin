@@ -31,7 +31,7 @@ class Tag {
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 	
 	
 	/**
@@ -59,7 +59,13 @@ class Tag {
      * @ORM\Column(name="status", type="boolean")
      */
     private $status;
-	
+
+	 /**
+     * @ORM\ManyToMany(targetEntity="Od\MainBundle\Entity\Post", cascade={"persist", "refresh"})
+	 * @ORM\JoinTable(name="post_tag")
+     */
+	 
+    private $posts;
 	
     public function __construct()
     {
@@ -120,5 +126,10 @@ class Tag {
 	public function refreshUpdated() {
 		$this->setUpdated(new \DateTime("now"));
 	}
-	
+	public function getPosts()
+    {
+
+    return $this->posts;
+
+    }
 }
